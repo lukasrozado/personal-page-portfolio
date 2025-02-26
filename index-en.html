@@ -1,89 +1,86 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        window.onload = () => {
-            // Detecta o idioma do navegador
-            const userLang = navigator.language || navigator.userLanguage;
-
-            // Verifica se o usuário já escolheu um idioma
-            const savedLang = localStorage.getItem('preferredLang');
-
-            // Determina o caminho atual
-            const currentPath = window.location.pathname;
-
-            // Lógica de redirecionamento otimizada
-            if (!savedLang) {
-                if (userLang.startsWith('en')) {
-                    localStorage.setItem('preferredLang', 'en');
-                    if (currentPath !== '/index-en.html') {
-                        window.location.href = "index-en.html";
-                    }
-                } else {
-                    localStorage.setItem('preferredLang', 'pt');
-                    if (currentPath !== '/index.html') {
-                        window.location.href = "index.html";
-                    }
-                }
-            } else {
-                // Redireciona com base na preferência salva
-                if (savedLang === 'en' && currentPath !== '/index-en.html') {
-                    window.location.href = "index-en.html";
-                } else if (savedLang === 'pt' && currentPath !== '/index.html') {
-                    window.location.href = "index.html";
-                }
-            }
-        };
-    </script>
+    <title>Lukas Rozado - Full Stack Developer & Data Scientist</title>
+    <meta name="description" content="Turning ideas into digital reality. Full Stack Developer, Data Scientist, and Data Analyst with innovative and strategic solutions.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/lukas-rozado-favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/lukas-rozado-favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/icons/lukas-rozado-favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/icons/lukas-rozado-favicon-64x64.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="assets/icons/lukas-rozado-favicon-128x128.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="assets/icons/lukas-rozado-favicon-256x256.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/lukas-rozado-favicon-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/lukas-rozado-favicon-180x180.png">
+    <link rel="manifest" href="assets/manifest/site.webmanifest">
+    <link rel="shortcut icon" href="assets/icons/lukas-rozado-favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:title" content="Lukas Rozado - Full Stack Developer & Data Scientist">
+    <meta property="og:description" content="Turning ideas into digital reality and data into innovative strategies.">
+    <meta property="og:image" content="assets/images/hero-image-lukas-rozado.png">
+    <meta property="og:url" content="https://your-domain.com">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
     <header>
-        <nav>
-            <h1>Seu Nome</h1>
+        <nav id="navbar">
+            <a href="index.html"><img src="assets/images/logo-lukas-rozado.png" alt="Lukas Rozado Logo"></a>
+            <div id="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contact">Contato</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="home">
-            <a href="index-en.html">English</a>
-            <h2>Bem-vindo!</h2>
-            <p>Sou um desenvolvedor em constante aprendizado, apaixonado por criar soluções criativas e funcionais.</p>
-        </section>
-        <section id="projects">
-            <h2>Projetos</h2>
-            <div class="project">
-                <h3>Projeto 1</h3>
-                <p>Descrição breve do projeto.</p>
-                <a href="https://github.com/seu-usuario/projeto1" target="_blank">Ver no GitHub</a>
+        <section id="hero" style="height: 100vh;">
+            <div class="content">
+                <svg xmlns="http://www.w3.org/2000/svg" id="welcome" viewBox="0 0 800 200">
+                    <text text-anchor="start" alignment-baseline="middle" fill="none" stroke="#00D4FF" stroke-width="2" font-size="48" font-family="Roboto">
+                      Welcome
+                    </text>
+                </svg>
+                <p>
+                    My name is Lukas Rozado. I turn ideas into digital reality, data into powerful strategies, and technology into innovation. 
+                    Full Stack Developer, Data Scientist, and Data Analyst. Exploring innovative solutions 
+                    that solve complex challenges with simplicity.
+                </p>
+            </div>
+            <div class="image-container">
+                <img src="assets/images/hero-image-lukas-rozado.png" alt="Developer Illustration">
             </div>
         </section>
-        <section id="about">
-            <h2>Sobre Mim</h2>
-            <p>Sou apaixonado por tecnologia e tenho estudado front-end e back-end para criar aplicações completas e responsivas.</p>
-        </section>
-        <section id="contact">
-            <h2>Contato</h2>
-            <form>
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Mensagem:</label>
-                <textarea id="message"></textarea>
-                <button type="submit">Enviar</button>
-            </form>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>Project 1</h3>
+                    <p>Brief project description.</p>
+                    <a href="https://github.com/your-username/project1" target="_blank">View on GitHub</a>
+                </div>
+                <div class="project">
+                    <h3>Project 2</h3>
+                    <p>Brief project description.</p>
+                    <a href="https://github.com/your-username/project2" target="_blank">View on GitHub</a>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
-        <p>© 2024 Lukas Rozado</p>
+        <p>© 2025 Lukas Rozado</p>
+        <div id="social-links">
+            <a href="https://github.com/lukasrozado" target="_blank" id="profile-link"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="social-icon" loading="lazy"></a>
+            <a href="https://www.linkedin.com/in/lukasrozado/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="social-icon" loading="lazy"></a>
+        </div>
     </footer>
+    <script src="assets/js/scripts.js"></script>
 </body>
 </html>

@@ -33,15 +33,6 @@ header nav img {
     padding-left: 40px;
 }
 
-#projects{
-    align-items: center;
-    text-align: center;
-}
-.projects{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
 header nav ul {
     list-style: none;
     display: flex;
@@ -142,7 +133,6 @@ header nav ul li a:hover {
     overflow: hidden;
 }
 
-/* Rodapé */
 footer {
     text-align: center;
     padding: 20px 0;
@@ -162,30 +152,6 @@ footer {
     filter: invert(1);
 }
 
-.menu-icon {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 21px;
-}
-
-.menu-icon span {
-    width: 30px;
-    height: 3px;
-    background-color: white;
-}
-
-@media (min-width: 769px) {
-    #menu-toggle {
-        display: none;
-    }
-
-    #nav-links {
-        display: flex;
-        position: static;
-    }
-}
 
 @media (max-width: 1024px) {
     #hero {
@@ -206,13 +172,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    #hero {
-        height: 100%; 
-        flex-direction: column;
-        padding: 40px 20px;
-        text-align: center;
-    }
-
     #hero .content {
         max-width: 100%;
         margin-bottom: 20px;
@@ -224,35 +183,19 @@ footer {
     }
 
     #hero .image-container img {
-        max-width: 90%;
-        height: 100%
+        max-width: 80%;
+        height: auto;
+        margin: 0 auto;
     }
 
-    #welcome {
-        padding-bottom: 10px;
-        display: flex;
-        align-items: center; 
-        justify-content: center;
-        text-align: center; 
-        flex-direction: column;
-        margin-bottom: 10px;
-        margin-top: 10px;
-        margin-left: 60px;
-
-    }
     #welcome text {
-        font-size: 10rem;
-        text-align: center;
-        flex-direction: column;
-        margin: 5px;
-        
+        font-size: 4rem; 
     }
 }
 
 @media (max-width: 480px) {
     #hero {
-        min-height: 20vh;
-        max-height: 75vh;   
+        min-height: 60vh;
         padding: 20px;
     }
 
@@ -260,29 +203,16 @@ footer {
         flex-direction: column;
         gap: 10px;
     }
+
     header nav img {
-        height: 80px; 
+        height: 40px; 
     }
+
     #hero p {
         font-size: 0.9rem;
     }
-    #welcome {
-        padding-bottom: 10px;
-        display: flex;
-        align-items: center; 
-        justify-content: center;
-        text-align: center; 
-        flex-direction: column;
-        margin-bottom: 10px;
-        margin-top: 10px;
-        margin-left: 20px;
 
-    }
     #welcome text {
-        font-size: 10rem;
-        text-align: center;
-        flex-direction: column;
-        margin: 5px;
-        
+        font-size: 3rem;
     }
 }

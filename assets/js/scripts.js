@@ -1,15 +1,9 @@
-// Aguarda o carregamento da página para iniciar as animações
 window.onload = () => {
-    // Detecta o idioma do navegador
+    // Redirecionamento de idioma
     const userLang = navigator.language || navigator.userLanguage;
-
-    // Verifica se o usuário já escolheu um idioma
     const savedLang = localStorage.getItem("preferredLang");
-
-    // Determina a URL completa atual
     const currentURL = window.location.href;
 
-    // Lógica de redirecionamento
     if (!savedLang) {
         if (userLang.startsWith("en")) {
             localStorage.setItem("preferredLang", "en");
@@ -30,11 +24,33 @@ window.onload = () => {
         }
     }
 
-    //Event List
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-        document.getElementById('nav-links').classList.toggle('active');
+    // Menu Hamburguer
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('header nav ul');
+    const mainContent = document.querySelector('main');
+
+    menuToggle.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        mainContent.classList.toggle('navbar-active');
     });
 
+    // Fechar menu ao clicar em links
+    document.querySelectorAll('header nav ul li a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            mainContent.classList.remove('navbar-active');
+        });
+    });
 
+    // Fechar menu ao clicar fora
+    document.addEventListener('click', (e) => {
+        const navbar = document.getElementById('navbar');
+        if (!navbar.contains(e.target)) {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            mainContent.classList.remove('navbar-active');
+        }
+    });
 };
-

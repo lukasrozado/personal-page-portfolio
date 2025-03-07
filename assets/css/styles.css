@@ -58,6 +58,9 @@ header nav ul {
     margin: 0;
     padding: 0;
 }
+.project{
+    margin: 2rem;
+}
 
 header nav ul li a {
     text-decoration: none;
